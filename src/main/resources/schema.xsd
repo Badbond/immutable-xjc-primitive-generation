@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:complexType name="OptionalForPrimitiveField">
+        <xsd:all>
+            <!-- Generates Optional<Integer> getter. -->
+            <xsd:element name="index" type="xsd:int" nillable="false"/>
+        </xsd:all>
+    </xsd:complexType>
+    <xsd:complexType name="NullCheckForPrimitiveField">
+        <!-- Generates a builder with `null` check for primitive field (compilation error). -->
+        <xsd:attribute name="index" type="xsd:int" use="required"/>
+    </xsd:complexType>
+</xsd:schema>
